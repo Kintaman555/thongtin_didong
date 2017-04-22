@@ -108,7 +108,7 @@ for number_of_relialization=1:Number_Relz;
 	end;
     ser_relz=[ser_relz;ser];
 end;
-load e8p1_Res snr ser;
+% load e8p1_Res snr ser;
 semilogy(snr,ser,'bo');
 hold on
     
