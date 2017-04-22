@@ -208,14 +208,14 @@ for number_of_relialization=1:Number_Relz;
             %Calculation of error symbols
             [number, ratio]=symerr(symbols, data_symbol);
             ser=[ser, ratio];
-        end;
-        ser_relz=[ser_relz;ser];
     end;
-    ser=sum(ser_relz)/Number_Relz;
-    snr=snr_min:step:snr_max;
-    semilogy(snr, ser, '*--');
-    hold off
+    ser_relz=[ser_relz;ser];
+end;
+ser=sum(ser_relz)/Number_Relz;
+snr=snr_min:step:snr_max;
+semilogy(snr, ser, '*--');
+hold off
     
-    ylabel('SER');
-    xlabel('SNR in dB');
-    legend('time-variant', 'time-invariant');
+ylabel('SER');
+xlabel('SNR in dB');
+legend('time-variant', 'time-invariant');
