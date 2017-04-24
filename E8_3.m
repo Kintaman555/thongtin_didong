@@ -203,11 +203,11 @@ for number_of_relialization=1:Number_Relz;
             demodulated_symbol_i=qamdemod(d,M_ary);
             data_symbol=[data_symbol, demodulated_symbol_i];
         end;
-            data_symbol=data_symbol';
+        data_symbol=data_symbol';
             
-            %Calculation of error symbols
-            [number, ratio]=symerr(symbols, data_symbol);
-            ser=[ser, ratio];
+        %Calculation of error symbols
+        [number, ratio]=symerr(symbols, data_symbol);
+        ser=[ser, ratio];
     end;
     ser_relz=[ser_relz;ser];
 end;
