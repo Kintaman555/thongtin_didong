@@ -90,7 +90,7 @@ for n_r = 1:no_of_realizations;
             received_data = conv (guarded_data(:, i), h);
             
             % Adding additive noise
-            received_data = awgn (received_data, snr, 'measured', 'dB');
+%             received_data = awgn (received_data, snr, 'measured', 'dB');
             received_data_frame(:, i) = received_data;
             initial_time = t;
         end;
@@ -143,7 +143,7 @@ output_bit_seq = de2bi (demodulated_data);
 % Calculating the number of symbol erroreceived_data and symbol error rate
 [no_of_bits, ser] = symerr (input_bit_seq, output_bit_seq);
 disp ('number of bits: ');
-disp (no_of_symerreceived_data);
+disp (no_of_bits);
 disp ('bit error rate: ');
 disp (ser);
 
