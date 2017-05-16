@@ -111,13 +111,13 @@ for n_r = 1:no_of_realizations;
 end;
 
 % Signal retrieving
-for i = 1:(no_of_symbols * 2);
+for i = 1:(no_of_symbols * 2)
 	h_freq = fft ([h_frame(i, :), zeros(1, fft_len+guard_len-1)]);
 	h_freq_trans = transpose (h_freq);
 	processed_col = received_data_frame(:, i) ./ h_freq_trans;
 	processed_col = processed_col(1:(fft_len + guard_len));
 	processed_data(:, i) = processed_col;
-end;
+end
 
 % Removing guard
 offguarded_data = processed_data((end - (fft_len - 1)):end, :);
